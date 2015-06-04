@@ -12,10 +12,10 @@ func main() {
 	http.HandleFunc("/new", funs.Output)
 	http.HandleFunc("/", funs.Proxy)
 	//start http server
-	server := &http.Server{Addr: "192.169.100.81:8888", Handler: nil}
+	server := &http.Server{Addr: "172.31.21.68:58888", Handler: nil}
 	err := server.ListenAndServe()
 	if err != nil {
-		fmt.Println("Start http server failed")
+		fmt.Println("Start http server failed: %v", err.Error())
 	}
 	fmt.Println("Server stopping")
 }
