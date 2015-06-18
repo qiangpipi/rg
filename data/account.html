@@ -1,0 +1,140 @@
+<html xmlns="http://www.w3.org/1999/xhtml"> 
+<head> 
+<meta http-equiv="Content-Type" content="text/html;charset=gb2312" /> 
+<title>Account Services</title> 
+<style type="text/css"> 
+<!-- 
+body,table,div,ul,li{ 
+padding:0; 
+text-align:left; 
+font:14px "宋体"; 
+} 
+body{ 
+font:14px "宋体"; 
+text-align:left; 
+} 
+a:link{ 
+color:#00F; 
+text-decoration:none; 
+} 
+a:visited { 
+color: #00F; 
+text-decoration:none; 
+} 
+a:hover { 
+color: #c00; 
+text-decoration:underline; 
+} 
+ul{ list-style:none;} 
+/*选项卡1*/ 
+#Tab1{ 
+width:450px; 
+margin:0px; 
+padding:0px; 
+margin:0 auto;} 
+/*选项卡2*/ 
+#Tab2{ 
+width:450px; 
+margin:0px; 
+padding:0px; 
+margin:0 auto;} 
+/*菜单class*/ 
+.Menubox { 
+width:100%; 
+height:28px; 
+line-height:28px; 
+} 
+.Menubox ul{ 
+margin:0px; 
+padding:0px; 
+} 
+.Menubox li{ 
+float:left; 
+display:block; 
+cursor:pointer; 
+width:220px; 
+text-align:center; 
+color:#949694; 
+font:16px "宋体"; 
+font-weight:bold; 
+} 
+.Menubox li.hover{ 
+padding:0px; 
+background:#fff; 
+width:220px; 
+border-left:2px solid #A8C29F; 
+border-top:2px solid #A8C29F; 
+border-right:2px solid #A8C29F; 
+color:#739242; 
+font:16px "宋体"; 
+font-weight:bold; 
+height:27px; 
+line-height:27px; 
+} 
+.Contentbox{ 
+clear:both; 
+margin-top:0px; 
+border:2px solid #A8C29F; 
+/*border-top:none; */
+height:350px; 
+text-align:left; 
+padding-top:8px; 
+padding-left:8px; 
+} 
+span{padding-right:10px;width:4em;display:block;float:left;line-height:26px;}
+--> 
+</style> 
+<script> 
+<!-- 
+/*第一种形式 第二种形式 更换显示样式*/ 
+function setTab(name,cursel,n){ 
+for(i=1;i<=n;i++){ 
+var menu=document.getElementById(name+i); 
+var con=document.getElementById("con_"+name+"_"+i); 
+menu.className=i==cursel?"hover":""; 
+con.style.display=i==cursel?"block":"none"; 
+} 
+} 
+//--> 
+</script> 
+</head> 
+<body>
+ 
+<div id="Tab1"> 
+<div class="Menubox"> 
+<ul> 
+<li id="one1" onClick="setTab('one',1,4)" class="hover">Create Account</li> 
+<li id="one2" onClick="setTab('one',2,4)">Change Password</li> 
+</ul> 
+</div> 
+<div class="Contentbox"> 
+<div id="con_one_1" class="hover">
+<body>
+<form name="form1" method="post">
+<table>
+<tr><td align="right">Username:</td><td align="left"><input type="text" name="username" /></td></tr>
+<tr><td align="right">Password:</td><td align="left"><input type="text" name="passwd" /></td></tr>
+<tr><td align="right">First Name:</td><td align="left"><input type="text" name="fname" /></td></tr>
+<tr><td align="right">Last Name:</td><td align="left"><input type="text" name="lname" /></td></tr>
+<tr><td align="right">Email:</td><td align="left"><input type="text" name="email" /></td></tr>
+</table>
+<input type = "submit" name = "button1" id = "button1" value="Create New Account">
+</form>
+</body>
+</div> 
+<div id="con_one_2" class="hover" style="display:none">
+<body>
+<form name="form1" method="post">
+<table>
+<tr><td align="right">Current Password:</td><td align="left"><input type="text" name="passwd" /></td></tr>
+<tr><td align="right">New Password:</td><td align="left"><input type="text" name="newpasswd" /></td></tr>
+<tr><td align="right">Repeat Password:</td><td align="left"><input type="text" name="confirmpasswd" /></td></tr>
+</table>
+<input type = "submit" name = "button2" id = "button2" value="Change Password">
+</form>
+</body>
+</div> 
+</div> 
+</div>
+ 
+</body>

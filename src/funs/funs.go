@@ -5,6 +5,7 @@ import (
 	"io"
 	"io/ioutil"
 	"net/http"
+	"os"
 )
 
 func Output(w http.ResponseWriter, r *http.Request) {
@@ -34,5 +35,31 @@ func Proxy(w http.ResponseWriter, r *http.Request) {
 		w.Header().Add("Content-Length", fmt.Sprint(resp.ContentLength))
 	}
 	w.WriteHeader(resp.StatusCode)
+	w.Write(d)
+}
+
+func Account(w http.ResponseWriter, r *http.Request) {
+	r.ParseForm()
+	f, err := os.Open("./data/account.html")
+	if err != nil {
+		fmt.Println("File open faild" + err.Error())
+	}
+	defer f.Close()
+	d, _ := ioutil.ReadAll(f)
+	w.Write(d)
+}
+
+func CreateAccount(w http.ResponseWriter, r *http.Request) {
+}
+func ChangePasswd(w http.ResponseWriter, r *http.Request) {
+}
+func Ant(w http.ResponseWriter, r *http.Request) {
+	r.ParseForm()
+	f, err := os.Open("./data/ant.html")
+	if err != nil {
+		fmt.Println("File open faild" + err.Error())
+	}
+	defer f.Close()
+	d, _ := ioutil.ReadAll(f)
 	w.Write(d)
 }
